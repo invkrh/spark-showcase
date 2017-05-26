@@ -1,2 +1,4 @@
-# spark-showcase
+# spark showcase
+
 Practical Spark use case
+
