@@ -6,7 +6,7 @@ import me.invkrh.showcase.{JsonSerde, SparkJobSpec}
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions.avg
 
-object NestedStructureTest {
+object NestedStructureCase {
   object Position extends Enumeration { val DEV, OPS = Value }
   case class Person(name: String, age: Int, position: String, employer: Option[Employer])
   case class Employer(name: String, city: String)
@@ -23,9 +23,9 @@ object NestedStructureTest {
   private val ser = input.map(JsonSerde.serialize)
 }
 
-class NestedStructureTest extends SparkJobSpec {
+class NestedStructureCase extends SparkJobSpec {
   import spark.implicits._
-  import NestedStructureTest._
+  import NestedStructureCase._
 
   private val df = spark.sparkContext
     .makeRDD(ser)
