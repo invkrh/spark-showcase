@@ -12,7 +12,7 @@ class DFUnpersist extends SparkJobSpec {
 
       val b = a.select('a, 'b + 1).cache
       b.count
-
+      $"".isin()
       a.queryExecution.withCachedData
       b.queryExecution.withCachedData
 
